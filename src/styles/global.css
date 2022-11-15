@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-zinc-800 text-zinc-200;
+}
+
+.temporary {
+	@apply text-violet-500 text-5xl;
+}
