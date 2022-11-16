@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 body {
-	@apply bg-zinc-800 text-zinc-200;
+	@apply bg-gray-900 text-gray-100 font-merriweather;
 }
 
-.temporary {
-	@apply bg-zinc-500 text-yellow-400;
+header {
+	@apply w-full py-1 px-5 bg-gray-700 border-b border-gray-600 font-montserrat;
+}
+
+.menuDrawer {
+	@apply bg-zinc-800 text-blue-400;
 }

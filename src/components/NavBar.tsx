@@ -11,6 +11,11 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { Users, Home, Menu, Book, Email } from "../icons/fontAwesomeIcons";
 
+import { theme } from "../styles/reactColorThemes";
+import { ThemeProvider } from "@mui/material/styles";
+
+const colorThemesForComponents = theme;
+
 const menuBoxList = [
 	{
 		title: "Home",
@@ -46,7 +51,7 @@ export function NavBar() {
 
 	const menuList = () => (
 		<Box
-			className="temporary"
+			className="menuDrawer"
 			sx={{ width: "100%", height: "100%" }}
 			role="presentation"
 			onClick={toggleDrawer(false)}
@@ -54,10 +59,10 @@ export function NavBar() {
 		>
 			<List>
 				{Object(menuBoxList).map((item: { title: string; icon: JSX.Element }) => (
-					<ListItem key={item.title} disablePadding>
-						<ListItemButton>
+					<ListItem sx={{ px: 1 }} key={item.title}>
+						<ListItemButton sx={{ ":hover": { backgroundColor: "#2E2E33" } }} alignItems="center">
 							<ListItemIcon>{item.icon}</ListItemIcon>
-							<ListItemText primary={item.title} />
+							<ListItemText primaryTypographyProps={{ fontFamily: "montserrat" }} primary={item.title} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -67,10 +72,20 @@ export function NavBar() {
 
 	return (
 		<>
-			<Button startIcon={<Menu />} onClick={toggleDrawer(true)}>
-				MENU
-			</Button>
-			<Drawer anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
+			<header>
+				<ThemeProvider theme={colorThemesForComponents}>
+					<Button
+						color="neutral"
+						sx={{ ":hover": { color: "#DEDEDE" }, fontFamily: "montserrat" }}
+						startIcon={<Menu />}
+						onClick={toggleDrawer(true)}
+					>
+						MENU
+					</Button>
+				</ThemeProvider>
+			</header>
+
+			<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
 				{menuList()}
 			</Drawer>
 		</>
