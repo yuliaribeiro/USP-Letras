@@ -9,6 +9,27 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
+import { Users, Home, Menu, Book, Email } from "../icons/fontAwesomeIcons";
+
+const menuBoxList = [
+	{
+		title: "Home",
+		icon: <Home />,
+	},
+	{
+		title: "About us",
+		icon: <Users />,
+	},
+	{
+		title: "Articles",
+		icon: <Book />,
+	},
+	{
+		title: "Contact",
+		icon: <Email />,
+	},
+];
+
 export function NavBar() {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -26,17 +47,17 @@ export function NavBar() {
 	const menuList = () => (
 		<Box
 			className="temporary"
-			sx={{ width: 175 }}
+			sx={{ width: "100%", height: "100%" }}
 			role="presentation"
 			onClick={toggleDrawer(false)}
 			onKeyDown={toggleDrawer(false)}
 		>
 			<List>
-				{["Home", "About us", "Articles", "Contact"].map((text, index) => (
-					<ListItem key={text} disablePadding>
+				{Object(menuBoxList).map((item: { title: string; icon: JSX.Element }) => (
+					<ListItem key={item.title} disablePadding>
 						<ListItemButton>
-							<ListItemIcon></ListItemIcon>
-							<ListItemText primary={text} />
+							<ListItemIcon>{item.icon}</ListItemIcon>
+							<ListItemText primary={item.title} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -46,7 +67,9 @@ export function NavBar() {
 
 	return (
 		<>
-			<Button onClick={toggleDrawer(true)}>MENU</Button>
+			<Button startIcon={<Menu />} onClick={toggleDrawer(true)}>
+				MENU
+			</Button>
 			<Drawer anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
 				{menuList()}
 			</Drawer>
