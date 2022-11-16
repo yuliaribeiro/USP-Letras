@@ -7,5 +7,5 @@ body {
 }
 
 .temporary {
-	@apply text-violet-500 text-5xl;
+	@apply bg-zinc-500 text-yellow-400;
 }
