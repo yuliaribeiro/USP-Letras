@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { NavBar } from "./components/NavBar";
 
 const GET_ARTICLES_QUERY = gql`
 	query {
@@ -17,23 +18,14 @@ interface Articles {
 }
 
 function App() {
-	const { data } = useQuery<{ articles: Articles[] }>(GET_ARTICLES_QUERY);
+	//const { data } = useQuery<{ articles: Articles[] }>(GET_ARTICLES_QUERY);
 
-	console.log(data);
 	return (
-		<div>
-			<h1 className="temporary">Oh no! This page is under construction...</h1>
-			<h3 className="text-2xl">Come back later :)</h3>
-			{
-				// TODO: Delete
-				//Testing API GraphCMS
-				/* <ul>
-				{data?.articles.map((article) => {
-					return <li key={article.id}>{article.title}</li>;
-				})}
-			</ul> */
-			}
-		</div>
+		<>
+			<NavBar />
+			<h1 className="text-5xl text-blue-400 text-center">Oh no! This page is under construction...</h1>
+			<h3 className="text-2xl text-center">Come back later :)</h3>
+		</>
 	);
 }
 
