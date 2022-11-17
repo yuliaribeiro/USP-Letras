@@ -4,6 +4,11 @@
 
 body {
 	@apply bg-gray-900 text-gray-100 font-merriweather;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	@apply scroll-smooth;
 }
 
 .boxNavHeader {
