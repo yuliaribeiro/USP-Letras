@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
+import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { Users, Home, Menu, Book, Email } from "../icons/fontAwesomeIcons";
-
 import { theme } from "../styles/reactColorThemes";
 import { ThemeProvider } from "@mui/material/styles";
+
+import { Users, Home, Menu, Book, Email } from "../icons/fontAwesomeIcons";
 
 const colorThemesForComponents = theme;
 
@@ -72,7 +72,7 @@ export function NavBar() {
 
 	return (
 		<>
-			<header>
+			<div className="boxNavHeader">
 				<ThemeProvider theme={colorThemesForComponents}>
 					<Button
 						color="neutral"
@@ -83,11 +83,10 @@ export function NavBar() {
 						MENU
 					</Button>
 				</ThemeProvider>
-			</header>
-
-			<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
-				{menuList()}
-			</Drawer>
+				<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
+					{menuList()}
+				</Drawer>
+			</div>
 		</>
 	);
 }

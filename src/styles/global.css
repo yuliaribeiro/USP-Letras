@@ -6,10 +6,14 @@ body {
 	@apply bg-gray-900 text-gray-100 font-merriweather;
 }
 
-header {
+.boxNavHeader {
 	@apply w-full py-1 px-5 bg-gray-700 border-b border-gray-600 font-montserrat;
 }
 
 .menuDrawer {
 	@apply bg-zinc-800 text-blue-400;
+}
+
+.landingPageTitle {
+	@apply pt-40 text-4xl lg:text-6xl md:text-5xl text-center  text-gray-100;
 }
