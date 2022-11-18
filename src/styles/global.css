@@ -4,6 +4,11 @@
 
 body {
 	@apply bg-gray-900 text-gray-100 font-merriweather;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	@apply scroll-smooth;
 }
 
 .boxNavHeader {
@@ -15,5 +20,9 @@ body {
 }
 
 .landingPageTitle {
-	@apply pt-40 text-4xl lg:text-6xl md:text-5xl text-center  text-gray-100;
+	@apply pt-40 text-4xl lg:text-7xl md:text-5xl text-center  text-gray-100;
+}
+
+.pageTitle {
+	@apply text-3xl lg:text-5xl md:text-4xl text-center text-zinc-900 pt-10 font-montserrat;
 }

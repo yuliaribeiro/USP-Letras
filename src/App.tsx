@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { NavBar } from "./components/NavBar";
+import { LandingPage } from "./components/LandingPage";
 
 const GET_ARTICLES_QUERY = gql`
 	query {
@@ -22,9 +22,7 @@ function App() {
 
 	return (
 		<>
-			<NavBar />
-			<h1 className="text-5xl text-blue-400 text-center">Oh no! This page is under construction...</h1>
-			<h3 className="text-2xl text-center">Come back later :)</h3>
+			<LandingPage />
 		</>
 	);
 }
