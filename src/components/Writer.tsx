@@ -6,8 +6,8 @@ export function Writer() {
 			<Grid container sx={{ width: "60%", marginLeft: "auto", marginRight: "auto", paddingBottom: 10 }}>
 				<Grid item>
 					<Avatar
-						alt="research name" //TODO Change name IAW Hygraph info
-						src="https://avatars.githubusercontent.com/u/89787597?v=4"
+						alt="research name" //TODO Change name IAW H. info
+						src="https://avatars.githubusercontent.com/u/89787597?v=4" //TODO Change pic
 						sx={{
 							marginRight: 2,
 							boxShadow: 5,
