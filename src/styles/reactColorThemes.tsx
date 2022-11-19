@@ -12,6 +12,7 @@ declare module "@mui/material/styles" {
 declare module "@mui/material/Button" {
 	interface ButtonPropsColorOverrides {
 		neutral: true;
+		success: true;
 	}
 }
 
@@ -21,6 +22,11 @@ export const theme = createTheme({
 		neutral: palette.augmentColor({
 			color: {
 				main: "#717171",
+			},
+		}),
+		success: palette.augmentColor({
+			color: {
+				main: "#00875F",
 			},
 		}),
 	},
