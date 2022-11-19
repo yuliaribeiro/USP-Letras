@@ -72,21 +72,26 @@ export function NavBar() {
 
 	return (
 		<>
-			<div className="boxNavHeader">
-				<ThemeProvider theme={colorThemesForComponents}>
-					<Button
-						color="neutral"
-						sx={{ ":hover": { color: "#DEDEDE" }, fontFamily: "montserrat" }}
-						startIcon={<Menu />}
-						onClick={toggleDrawer(true)}
-					>
-						MENU
-					</Button>
-				</ThemeProvider>
-				<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
-					{menuList()}
-				</Drawer>
-			</div>
+			<ThemeProvider theme={colorThemesForComponents}>
+				<Button
+					color="neutral"
+					sx={{
+						":hover": { color: "#F75A68" },
+						fontFamily: "montserrat",
+						fontWeight: "bold",
+						position: "fixed",
+						top: 10,
+						left: 15,
+					}}
+					startIcon={<Menu />}
+					onClick={toggleDrawer(true)}
+				>
+					MENU
+				</Button>
+			</ThemeProvider>
+			<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
+				{menuList()}
+			</Drawer>
 		</>
 	);
 }
