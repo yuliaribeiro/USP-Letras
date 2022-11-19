@@ -11,16 +11,20 @@ html {
 	@apply scroll-smooth;
 }
 
-.boxNavHeader {
-	@apply w-full py-1 px-5 bg-gray-700 border-b border-gray-600 font-montserrat;
+.boxFooter {
+	@apply w-full py-1 px-5 bg-gray-700 border-t border-gray-600 font-exo text-sm;
+}
+
+.landingPageTitle {
+	@apply pt-40 text-4xl lg:text-7xl md:text-5xl text-center  text-gray-100;
 }
 
 .menuDrawer {
 	@apply bg-zinc-800 text-blue-400;
 }
 
-.landingPageTitle {
-	@apply pt-40 text-4xl lg:text-7xl md:text-5xl text-center  text-gray-100;
+.styleIcons {
+	@apply bg-transparent  text-blue-400;
 }
 
 .pageTitle {
