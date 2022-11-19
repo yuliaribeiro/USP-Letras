@@ -31,5 +31,7 @@ The next step is to clone this project or if you prefer to use a fork for your l
 
 Then open your terminal and through npm, install all the project dependencies.
 
-Finally, enjoy it and let's rock some code! 😼
+Finally, keep in mind that the base of this website was created with Vite, so type "npm run dev" to run the project locally.
+
+Enjoy it and let's rock some code! 😼
 
