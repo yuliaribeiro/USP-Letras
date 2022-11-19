@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import { AboutUs } from "./AboutUs";
+import { Articles } from "./Articles";
 import { NavBar } from "./NavBar";
 
 export function LandingPage() {
@@ -13,6 +14,7 @@ export function LandingPage() {
 				<h3 className="text-2xl text-center text-violet-500"> Oh no... Come back later, we are underconstruction :)</h3>
 			</Grid>
 			<AboutUs />
+			<Articles />
 		</>
 	);
 }
