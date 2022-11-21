@@ -1,7 +1,22 @@
-import { Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import { Writer } from "./Writer";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export function AboutUs() {
+	const sliderSettings = {
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		infinite: true,
+		arrows: true,
+		speed: 500,
+		autoplay: true,
+		autoplaySpeed: 6000,
+		pauseOnHover: true,
+	};
+
 	return (
 		<Paper className="w-screen" sx={{ bgcolor: "#DADADA" }}>
 			<Typography sx={{ width: "60%", marginLeft: "auto", marginRight: "auto", paddingY: 10 }}>
@@ -12,7 +27,23 @@ export function AboutUs() {
 				will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
 				accident, sometimes on purpose (injected humour and the like).
 			</Typography>
-			<Writer />
+			<Grid
+				container
+				sx={{
+					width: "60%",
+					marginLeft: "auto",
+					marginRight: "auto",
+					paddingBottom: 10,
+				}}
+			>
+				<Grid item xs>
+					<Slider {...sliderSettings}>
+						<Writer />
+						<div>teste</div>
+						<Writer />
+					</Slider>
+				</Grid>
+			</Grid>
 		</Paper>
 	);
 }
