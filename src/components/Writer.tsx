@@ -3,7 +3,7 @@ import { Avatar, Grid, Typography } from "@mui/material";
 export function Writer() {
 	return (
 		<>
-			<Grid container sx={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}>
+			<Grid container sx={{ marginLeft: "auto", marginRight: "auto", width: "95%" }}>
 				<Grid item>
 					<Avatar
 						alt="research name" //TODO Change name IAW H. info
@@ -19,7 +19,7 @@ export function Writer() {
 					/>
 				</Grid>
 				<Grid item xs>
-					<Typography>
+					<Typography textAlign="justify">
 						Truncation should be conditionally applicable on this long line of text as this is a much longer line than
 						what the container can support.
 					</Typography>
