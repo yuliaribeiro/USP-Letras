@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { theme } from "../styles/reactColorThemes";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { Users, Home, Menu, Book, Email } from "../icons/fontAwesomeIcons";
+import { Book, Email, Home, Menu, Users } from "../icons/fontAwesomeIcons";
 
 const colorThemesForComponents = theme;
 
@@ -52,15 +52,15 @@ export function NavBar() {
 	const menuList = () => (
 		<Box
 			className="menuDrawer"
-			sx={{ width: "100%", height: "100%" }}
-			role="presentation"
 			onClick={toggleDrawer(false)}
 			onKeyDown={toggleDrawer(false)}
+			role="presentation"
+			sx={{ width: "100%", height: "100%" }}
 		>
 			<List>
-				{Object(menuBoxList).map((item: { title: string; icon: JSX.Element }) => (
-					<ListItem sx={{ px: 1 }} key={item.title}>
-						<ListItemButton sx={{ ":hover": { backgroundColor: "#2E2E33" } }} alignItems="center">
+				{Object(menuBoxList).map((item: { icon: JSX.Element; title: string }) => (
+					<ListItem key={item.title} sx={{ px: 1 }}>
+						<ListItemButton alignItems="center" sx={{ ":hover": { backgroundColor: "#2E2E33" } }}>
 							<ListItemIcon>{item.icon}</ListItemIcon>
 							<ListItemText primaryTypographyProps={{ fontFamily: "montserrat" }} primary={item.title} />
 						</ListItemButton>
@@ -75,21 +75,21 @@ export function NavBar() {
 			<ThemeProvider theme={colorThemesForComponents}>
 				<Button
 					color="neutral"
+					onClick={toggleDrawer(true)}
+					startIcon={<Menu />}
 					sx={{
 						":hover": { color: "#F75A68" },
 						fontFamily: "montserrat",
 						fontWeight: "bold",
 						position: "fixed",
-						top: 10,
 						left: 15,
+						top: 10,
 					}}
-					startIcon={<Menu />}
-					onClick={toggleDrawer(true)}
 				>
 					MENU
 				</Button>
 			</ThemeProvider>
-			<Drawer PaperProps={{ sx: { width: "13rem" } }} anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)}>
+			<Drawer anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)} PaperProps={{ sx: { width: "13rem" } }}>
 				{menuList()}
 			</Drawer>
 		</>
