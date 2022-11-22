@@ -1,11 +1,13 @@
-import { Button, Grid } from "@mui/material";
 import { Article } from "./Article";
+import { Button, Grid } from "@mui/material";
 
 export function Articles() {
 	return (
-		<Grid className="w-screen h-screen">
+		<>
 			<h1 className="pageTitle"> Most recent articles</h1>
-			<Grid container sx={{ width: "60%", marginLeft: "auto", marginRight: "auto", paddingBottom: 10 }} rowGap={3}>
+			<Grid container spacing={2} sx={{ marginLeft: "auto", marginRight: "auto", paddingBottom: 10, width: "60%" }}>
+				{/*TODO query only last 2 articles on H. to show bellow */}
+
 				<Grid item sm={12} md={12} lg={6}>
 					<Article />
 				</Grid>
@@ -13,11 +15,22 @@ export function Articles() {
 					<Article />
 				</Grid>
 			</Grid>
-			<Grid container>
-				<Button variant="contained" sx={{ margin: "auto" }} color="success" size="large">
+
+			<Grid container sx={{ marginBottom: 15 }}>
+				<Button
+					color="error"
+					size="large"
+					sx={{
+						borderRadius: 5,
+						fontFamily: "montserrat",
+						fontWeight: "bold",
+						margin: "auto",
+					}}
+					variant="contained"
+				>
 					See all
 				</Button>
 			</Grid>
-		</Grid>
+		</>
 	);
 }
