@@ -11,7 +11,9 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Button" {
 	interface ButtonPropsColorOverrides {
+		error: true;
 		neutral: true;
+		primary: true;
 		success: true;
 	}
 }
@@ -19,9 +21,19 @@ declare module "@mui/material/Button" {
 const { palette } = createTheme();
 export const theme = createTheme({
 	palette: {
+		error: palette.augmentColor({
+			color: {
+				main: "#F75A68",
+			},
+		}),
 		neutral: palette.augmentColor({
 			color: {
 				main: "#717171",
+			},
+		}),
+		primary: palette.augmentColor({
+			color: {
+				main: "#60A5FA",
 			},
 		}),
 		success: palette.augmentColor({
