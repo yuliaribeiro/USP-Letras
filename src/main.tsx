@@ -9,9 +9,7 @@ import { client } from "./lib/apollo";
 import "./styles/global.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<BrowserRouter>
-		<ApolloProvider client={client}>
-			<App />
-		</ApolloProvider>
-	</BrowserRouter>
+	<ApolloProvider client={client}>
+		<App />
+	</ApolloProvider>
 );

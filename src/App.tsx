@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home/Home";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
 
 const GET_ARTICLES_QUERY = gql`
 	query {
@@ -23,9 +23,7 @@ function App() {
 
 	return (
 		<>
-			<Routes>
-				<Route path="/" element={<Home />} />
-			</Routes>
+			<RouterProvider router={routes} />
 		</>
 	);
 }
