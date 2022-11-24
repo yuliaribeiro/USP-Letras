@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
-import { LandingPage } from "./components/LandingPage";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home/Home";
 
 const GET_ARTICLES_QUERY = gql`
 	query {
@@ -22,7 +23,9 @@ function App() {
 
 	return (
 		<>
-			<LandingPage />
+			<Routes>
+				<Route path="/" element={<Home />} />
+			</Routes>
 		</>
 	);
 }
