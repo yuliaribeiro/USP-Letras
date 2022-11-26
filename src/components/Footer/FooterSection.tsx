@@ -1,7 +1,7 @@
 import { IconButton, Stack } from "@mui/material";
 import { Email, GitHub, LinkedIn } from "../icons/fontAwesomeIcons";
 
-export function Footer() {
+export function FooterSection() {
 	const listIcons = {
 		github: <GitHub />,
 		linkedin: <LinkedIn />,

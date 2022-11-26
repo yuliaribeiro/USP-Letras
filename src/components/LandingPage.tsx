@@ -1,24 +1,24 @@
 import { Grid } from "@mui/material";
-import { AboutUs } from "./AboutUs";
-import { Articles } from "./Articles";
-import { Footer } from "./Footer";
-import { NavBar } from "./NavBar";
+import { AboutUsSection } from "./AboutUs/AboutUsSection";
+import { ArticlesSection } from "./Articles/ArticlesSection";
+import { FooterSection } from "./Footer/FooterSection";
+import { NavBarSection } from "./NavBar/NavBarSection";
 
 export function LandingPage() {
 	return (
 		<>
 			<Grid className="dimentionToScreen">
-				<NavBar />
+				<NavBarSection />
 				<h1 className="landingPageTitle">
 					Falantes de <span className=" text-red-500">Russo</span> no <span className="text-blue-400">BR</span>
 				</h1>
 			</Grid>
-			<AboutUs />
+			<AboutUsSection />
 			<Grid className="w-screen h-auto">
-				<Articles />
+				<ArticlesSection />
 			</Grid>
 			<Grid>
-				<Footer />
+				<FooterSection />
 			</Grid>
 		</>
 	);

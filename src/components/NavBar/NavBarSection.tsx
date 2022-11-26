@@ -9,7 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { theme } from "../styles/reactColorThemes";
+import { theme } from "../../styles/reactColorThemes";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { Book, Email, Home, Menu, Users } from "../icons/fontAwesomeIcons";
@@ -35,7 +35,7 @@ const menuBoxList = [
 	},
 ];
 
-export function NavBar() {
+export function NavBarSection() {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
 
 	const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
