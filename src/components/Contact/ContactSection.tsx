@@ -1,10 +1,5 @@
 import { Button, Card, CardContent, Grid, TextField } from "@mui/material";
 
-import { theme } from "../../styles/reactColorThemes";
-import { ThemeProvider } from "@mui/material/styles";
-
-const colorThemesForComponents = theme;
-
 const textFieldList = [
 	{
 		label: "first name",
@@ -34,60 +29,58 @@ const textFieldList = [
 
 export function ContactSection() {
 	return (
-		<ThemeProvider theme={colorThemesForComponents}>
-			<Card sx={{ maxWidth: 500, maxHeight: 530, bgcolor: "transparent" }}>
-				<CardContent>
-					<form>
-						<Grid container spacing={2}>
-							{/* @ts-ignore */}
-							{Object(textFieldList).map((item, key) => {
-								return (
-									<Grid key={key} item md={item.md} xs={12}>
-										<TextField
-											type={item.type}
-											label={item.label}
-											variant="outlined"
-											placeholder={item.label}
-											fullWidth
-											required={item.required}
-										/>
-									</Grid>
-								);
-							})}
-							<Grid item xs={12}>
-								<TextField
-									label="message"
-									variant="outlined"
-									placeholder="message"
-									multiline
-									rows={5}
-									fullWidth
-									required
-								/>
-							</Grid>
-							<Grid item xs={12}>
-								<Button
-									type="submit"
-									color="error"
-									size="large"
-									sx={{
-										borderRadius: 5,
-										fontFamily: "montserrat",
-										fontWeight: "bold",
-										":hover": {
-											bgcolor: "lightRed.main",
-										},
-									}}
-									variant="contained"
-									fullWidth
-								>
-									Submit
-								</Button>
-							</Grid>
+		<Card sx={{ maxWidth: 500, maxHeight: 530, bgcolor: "transparent" }}>
+			<CardContent>
+				<form>
+					<Grid container spacing={2}>
+						{/* @ts-ignore */}
+						{Object(textFieldList).map((item, key) => {
+							return (
+								<Grid key={key} item md={item.md} xs={12}>
+									<TextField
+										type={item.type}
+										label={item.label}
+										variant="outlined"
+										placeholder={item.label}
+										fullWidth
+										required={item.required}
+									/>
+								</Grid>
+							);
+						})}
+						<Grid item xs={12}>
+							<TextField
+								label="message"
+								variant="outlined"
+								placeholder="message"
+								multiline
+								rows={5}
+								fullWidth
+								required
+							/>
 						</Grid>
-					</form>
-				</CardContent>
-			</Card>
-		</ThemeProvider>
+						<Grid item xs={12}>
+							<Button
+								type="submit"
+								color="error"
+								size="large"
+								sx={{
+									borderRadius: 5,
+									fontFamily: "montserrat",
+									fontWeight: "bold",
+									":hover": {
+										bgcolor: "lightRed.main",
+									},
+								}}
+								variant="contained"
+								fullWidth
+							>
+								Submit
+							</Button>
+						</Grid>
+					</Grid>
+				</form>
+			</CardContent>
+		</Card>
 	);
 }
