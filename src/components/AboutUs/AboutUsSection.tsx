@@ -8,12 +8,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef } from "react";
 
-export function AboutUs() {
+export function AboutUsSection() {
 	const customSlider = useRef();
 
 	const sliderSettings = {
 		arrows: false,
-		autoplay: false,
+		autoplay: true,
 		autoplaySpeed: 6000,
 		infinite: true,
 		pauseOnHover: true,

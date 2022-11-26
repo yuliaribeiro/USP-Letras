@@ -1,7 +1,7 @@
 import { Article } from "./Article";
 import { Button, Grid } from "@mui/material";
 
-export function Articles() {
+export function ArticlesSection() {
 	return (
 		<>
 			<h1 className="pageTitle"> Most recent articles</h1>
