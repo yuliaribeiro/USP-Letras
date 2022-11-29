@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
@@ -15,23 +16,39 @@ const menuBoxList = [
 	{
 		title: "Home",
 		icon: <Home />,
+		path: "/",
 	},
 	{
 		title: "About us",
 		icon: <Users />,
+		path: "about",
 	},
 	{
 		title: "Articles",
 		icon: <Book />,
+		path: "/articles",
 	},
 	{
 		title: "Contact",
 		icon: <Email />,
+		path: "/contact",
 	},
 ];
 
 export function NavBarSection() {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
+	const path = useNavigate();
+
+	const handleClick = (route: string) => {
+		if (route === "about") {
+			path("/");
+			const anchor = document.getElementById(route);
+			console.log(anchor);
+			setTimeout(() => anchor?.scrollIntoView({ block: "center", inline: "center" }), 10);
+		} else {
+			path(route);
+		}
+	};
 
 	const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
 		if (
@@ -53,9 +70,13 @@ export function NavBarSection() {
 			sx={{ width: "100%", height: "100%" }}
 		>
 			<List>
-				{Object(menuBoxList).map((item: { icon: JSX.Element; title: string }) => (
+				{Object(menuBoxList).map((item: { icon: JSX.Element; title: string; path: string }) => (
 					<ListItem key={item.title} sx={{ px: 1 }}>
-						<ListItemButton alignItems="center" sx={{ ":hover": { backgroundColor: "#2E2E33" } }}>
+						<ListItemButton
+							alignItems="center"
+							sx={{ ":hover": { backgroundColor: "#2E2E33" } }}
+							onClick={() => handleClick(item.path)}
+						>
 							<ListItemIcon>{item.icon}</ListItemIcon>
 							<ListItemText primaryTypographyProps={{ fontFamily: "montserrat" }} primary={item.title} />
 						</ListItemButton>
