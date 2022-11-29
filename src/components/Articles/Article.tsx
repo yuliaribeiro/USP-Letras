@@ -61,7 +61,7 @@ export function Article() {
 					have opened and rice is just tender, 5 to 7 minutes more.
 				</Typography>
 				{/*TODO set onclick to redirect to page*/}
-				<Button>read more</Button>
+				<Button color="error">read more</Button>
 			</CardContent>
 		</Card>
 	);
