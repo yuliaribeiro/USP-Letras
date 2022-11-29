@@ -31,6 +31,22 @@ html {
 	@apply bg-zinc-800 text-blue-400;
 }
 
+.pageErrorGoBack {
+	@apply text-2xl mt-5 text-gray-100 font-exo;
+}
+
+.pageErrorMessage {
+	@apply text-center text-2xl lg:text-5xl md:text-3xl mt-16 text-gray-100;
+}
+
+.pageErrorOhNo {
+	@apply text-center mt-5 text-2xl text-gray-300 font-exo;
+}
+
+.pageErrorTitle {
+	@apply pt-32 text-4xl lg:text-7xl md:text-5xl text-gray-300 font-exo;
+}
+
 .pageTitle {
 	@apply text-3xl lg:text-5xl md:text-4xl text-center p-20 font-montserrat;
 }

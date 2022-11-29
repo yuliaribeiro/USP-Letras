@@ -3,6 +3,12 @@ module.exports = {
 	content: ["./src/**/*.tsx"],
 	theme: {
 		extend: {
+			spacing: {
+				145: "580px",
+				170: "680px",
+				195: "780px",
+				245: "980px",
+			},
 			fontFamily: {
 				exo: ["exo", "sans-serif"],
 				merriweather: ["merriweather", "sans-serif"],
