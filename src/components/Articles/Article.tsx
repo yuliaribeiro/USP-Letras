@@ -12,6 +12,7 @@ export function Article() {
 				marginLeft: "auto",
 				marginRight: "auto",
 				"&:hover": { scale: { lg: "1.09", md: "1.05" } },
+				bgcolor: "#DADADA",
 			}}
 		>
 			{/*TODO Apply onclick to redirect to the article*/}

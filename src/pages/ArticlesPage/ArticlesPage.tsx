@@ -1,3 +1,10 @@
+import { NavBarSection } from "../../components/NavBar/NavBarSection";
+
 export function ArticlesPage() {
-	return <h1>Articles page</h1>;
+	return (
+		<>
+			<NavBarSection />
+			<h1>Articles Page - Provisory title</h1>
+		</>
+	);
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Article } from "./Article";
 import { Button, Grid } from "@mui/material";
 
@@ -31,7 +32,7 @@ export function ArticlesSection() {
 					}}
 					variant="contained"
 				>
-					See all
+					<Link to="/articles">See all</Link>
 				</Button>
 			</Grid>
 		</>
