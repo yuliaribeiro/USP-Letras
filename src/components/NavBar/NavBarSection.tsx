@@ -9,12 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-import { theme } from "../../styles/reactColorThemes";
-import { ThemeProvider } from "@mui/material/styles";
-
 import { Book, Email, Home, Menu, Users } from "../icons/fontAwesomeIcons";
-
-const colorThemesForComponents = theme;
 
 const menuBoxList = [
 	{
@@ -72,23 +67,21 @@ export function NavBarSection() {
 
 	return (
 		<>
-			<ThemeProvider theme={colorThemesForComponents}>
-				<Button
-					color="neutral"
-					onClick={toggleDrawer(true)}
-					startIcon={<Menu />}
-					sx={{
-						":hover": { color: "#F75A68" },
-						fontFamily: "montserrat",
-						fontWeight: "bold",
-						position: "fixed",
-						left: 15,
-						top: 10,
-					}}
-				>
-					MENU
-				</Button>
-			</ThemeProvider>
+			<Button
+				color="neutral"
+				onClick={toggleDrawer(true)}
+				startIcon={<Menu />}
+				sx={{
+					":hover": { color: "#F75A68" },
+					fontFamily: "montserrat",
+					fontWeight: "bold",
+					position: "fixed",
+					left: 15,
+					top: 10,
+				}}
+			>
+				MENU
+			</Button>
 			<Drawer anchor={"left"} open={menuIsOpen} onClose={toggleDrawer(false)} PaperProps={{ sx: { width: "13rem" } }}>
 				{menuList()}
 			</Drawer>

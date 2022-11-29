@@ -25,6 +25,9 @@ export function ArticlesSection() {
 						fontFamily: "montserrat",
 						fontWeight: "bold",
 						margin: "auto",
+						":hover": {
+							bgcolor: "lightRed.main",
+						},
 					}}
 					variant="contained"
 				>

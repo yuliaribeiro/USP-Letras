@@ -15,12 +15,16 @@ html {
 	@apply w-full py-1 px-5 bg-gray-700 border-t border-gray-600 font-exo text-sm;
 }
 
+.contactPageBox {
+	@apply w-fit h-fit mx-auto mt-56  text-gray-100;
+}
+
 .dimentionToScreen {
-	@apply h-screen w-screen;
+	@apply h-screen w-screen flex;
 }
 
 .landingPageTitle {
-	@apply pt-40 text-4xl lg:text-7xl md:text-5xl text-center  text-gray-100;
+	@apply pt-32 text-4xl lg:text-7xl md:text-5xl mx-auto  text-gray-100;
 }
 
 .menuDrawer {
