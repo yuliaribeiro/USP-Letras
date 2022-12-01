@@ -21,7 +21,7 @@ export function FooterSection() {
 	];
 
 	const handleClick = (url: string, name: string) => {
-		name === "emai" ? window.open(url) : window.open(url, "_blank");
+		name === "email" ? window.open(url) : window.open(url, "_blank");
 	};
 
 	return (
