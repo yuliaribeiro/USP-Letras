@@ -23,7 +23,7 @@ export function AboutUsSection() {
 	};
 
 	return (
-		<div id="about">
+		<div id="about-us">
 			<Paper className="w-screen" sx={{ bgcolor: "#DADADA" }}>
 				<Typography textAlign="justify" sx={{ marginLeft: "auto", marginRight: "auto", paddingY: 10, width: "58%" }}>
 					It is a long established fact that a reader will be distracted by the readable content of a page when looking

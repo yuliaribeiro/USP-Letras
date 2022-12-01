@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ArticlesPage } from "./pages/ArticlesPage/ArticlesPage";
-import Contact from "./pages/Contact/Contact";
 import { ErrorPage } from "./pages/Error/ErrorPage";
 import { Home } from "./pages/Home/Home";
+import { Reading } from "./pages/Reading/Reading";
+import Contact from "./pages/Contact/Contact";
 
 export const routes = createBrowserRouter([
 	{
@@ -17,5 +18,9 @@ export const routes = createBrowserRouter([
 	{
 		path: "/contact",
 		element: <Contact />,
+	},
+	{
+		path: "/reading",
+		element: <Reading />
 	},
 ]);

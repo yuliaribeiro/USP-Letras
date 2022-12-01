@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
@@ -21,7 +21,7 @@ const menuBoxList = [
 	{
 		title: "About us",
 		icon: <Users />,
-		path: "about",
+		path: "/#about-us",
 	},
 	{
 		title: "Articles",
@@ -37,18 +37,6 @@ const menuBoxList = [
 
 export function NavBarSection() {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
-	const path = useNavigate();
-
-	const handleClick = (route: string) => {
-		if (route === "about") {
-			path("/");
-			const anchor = document.getElementById(route);
-			console.log(anchor);
-			setTimeout(() => anchor?.scrollIntoView({ block: "center", inline: "center" }), 10);
-		} else {
-			path(route);
-		}
-	};
 
 	const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
 		if (
@@ -72,14 +60,15 @@ export function NavBarSection() {
 			<List>
 				{Object(menuBoxList).map((item: { icon: JSX.Element; title: string; path: string }) => (
 					<ListItem key={item.title} sx={{ px: 1 }}>
-						<ListItemButton
-							alignItems="center"
-							sx={{ ":hover": { backgroundColor: "#2E2E33" } }}
-							onClick={() => handleClick(item.path)}
-						>
-							<ListItemIcon>{item.icon}</ListItemIcon>
-							<ListItemText primaryTypographyProps={{ fontFamily: "montserrat" }} primary={item.title} />
-						</ListItemButton>
+						<HashLink to={item.path} scroll={ (el) => el.scrollIntoView ({block: 'center', behavior: 'smooth'})}>
+							<ListItemButton
+								alignItems="center"
+								sx={{ ":hover": { backgroundColor: "#2E2E33" } }}
+							>
+								<ListItemIcon>{item.icon}</ListItemIcon>
+								<ListItemText primaryTypographyProps={{ fontFamily: "montserrat" }} primary={item.title} />
+							</ListItemButton>
+						</HashLink>
 					</ListItem>
 				))}
 			</List>
